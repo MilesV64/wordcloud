@@ -1,0 +1,51 @@
+@value primaryText from '../../styles/colors.module.css';
+
+.bar {
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
+    padding: 0.75rem;
+    color: primaryText;
+    font-weight: 600;
+}
+
+.roundAllCorners {
+    border-radius: 10px;
+}
+
+.roundTopCorners {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.bar:hover {
+    background-color: #edf2f7;
+}
+
+
+.menu {
+    background-color: white;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 70vh;
+    z-index: 1000;
+    border-radius: 0px 0px 10px 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.item {
+    cursor: pointer;
+    text-align: center;
+    padding: 0.75rem;
+    font-weight: 400;
+    
+}
+
+.item:hover {
+    background-color: #edf2f7;
+}

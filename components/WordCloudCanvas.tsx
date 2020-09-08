@@ -2,29 +2,34 @@ import React, { useEffect, useRef } from 'react';
 import Wordcloud from 'wordcloud';
 
 const WordCloudCanvas = ({
-    words, maxSize
+    words, maxSize, className
 }: {
-    words: [[]], maxSize: number
+    words: [[]], maxSize: number, className: string
 }) => {
 
     const canvas = useRef(null);
-
-    console.log(words);
+    const parent = useRef(null)
 
     useEffect(() => {
+
+        canvas.current.width = parent.current.offsetWidth*2;
+        canvas.current.height = parent.current.offsetHeight*2;
+
         Wordcloud(
             canvas.current,
             {
                 list: words,
                 weightFactor: (size) => {
-                    return 300 * (size/maxSize);
+                    return parent.current.offsetHeight * (size/maxSize);
                 }
             }
         );
     });
 
     return (
-        <canvas style={{width: 500, height: 500}} width="1000" height="1000" ref={canvas}></canvas>
+        <div className={className} ref={parent}>
+            <canvas style={{'width':'99%', 'height':'99%', 'borderRadius':'12px'}} ref={canvas}></canvas>
+        </div>
     );
 };
 

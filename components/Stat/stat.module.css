@@ -1,0 +1,23 @@
+@value primaryText from '../../styles/colors.module.css';
+@value secondaryText from '../../styles/colors.module.css';
+
+.background {
+    border-radius: 12px;
+    background-color: white;
+    padding: 0.5rem 1.5rem;
+    flex: 1 1 0%;
+}
+
+.data {
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: primaryText;
+}
+
+.description {
+    margin: 0.5rem 0 1rem 0;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: secondaryText;
+}
