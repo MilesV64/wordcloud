@@ -10,7 +10,7 @@ import Stat from '../components/Stat/stat';
 
 const WordCloudCanvas = dynamic(() => import('../components/WordCloudCanvas'), {ssr: false});
 
-const Test = ({ group, groups, words, maxSize }) => {
+const Dashboard = ({ group, groups, words, maxSize }) => {
 
     const router = useRouter();
 
@@ -45,7 +45,7 @@ const Test = ({ group, groups, words, maxSize }) => {
 
 }
 
-export default Test;
+export default Dashboard;
 
 
 const fs = require('fs');

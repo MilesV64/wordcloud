@@ -10,10 +10,12 @@ const WordCloudCanvas = ({
     const canvas = useRef(null);
     const parent = useRef(null)
 
-    useEffect(() => {
-
+    const handleResize = () => {
         canvas.current.width = parent.current.offsetWidth*2;
         canvas.current.height = parent.current.offsetHeight*2;
+
+        canvas.current.style.width = parent.current.offsetWidth + "px";
+        canvas.current.style.height = parent.current.offsetHeight + "px";
 
         Wordcloud(
             canvas.current,
@@ -24,11 +26,19 @@ const WordCloudCanvas = ({
                 }
             }
         );
+    }
+
+    useEffect(() => {
+
+        window.addEventListener('resize', handleResize);
+
+        handleResize();
+
     });
 
     return (
         <div className={className} ref={parent}>
-            <canvas style={{'width':'99%', 'height':'99%', 'borderRadius':'12px'}} ref={canvas}></canvas>
+            <canvas style={{'borderRadius':'12px'}} ref={canvas}></canvas>
         </div>
     );
 };
