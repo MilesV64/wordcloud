@@ -10,6 +10,7 @@
     padding: 0.75rem;
     color: primaryText;
     font-weight: 600;
+    transition: width 0.2s ease-out;
 }
 
 .roundAllCorners {
@@ -18,6 +19,8 @@
 
 .roundTopCorners {
     border-radius: 10px 10px 0px 0px;
+    width: 104%;
+    margin: 0 -2%;
 }
 
 .bar:hover {
@@ -37,6 +40,8 @@
     border-radius: 0px 0px 10px 10px;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     -webkit-overflow-scrolling: touch;
+    animation: appear 0.25s ease-out;
+
 }
 
 .item {
@@ -49,4 +54,13 @@
 
 .item:hover {
     background-color: #edf2f7;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

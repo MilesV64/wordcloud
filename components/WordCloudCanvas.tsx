@@ -21,8 +21,8 @@ const WordCloudCanvas = ({
             canvas.current,
             {
                 list: words,
-                weightFactor: (size) => {
-                    return parent.current.offsetHeight * (size/maxSize);
+                weightFactor: (size: number) => {
+                    return parent.current.offsetWidth/2 * (size/maxSize);
                 }
             }
         );
@@ -38,7 +38,7 @@ const WordCloudCanvas = ({
 
     return (
         <div className={className} ref={parent}>
-            <canvas style={{'borderRadius':'12px'}} ref={canvas}></canvas>
+            <canvas style={{'borderRadius':'12px', 'padding': '10px'}} ref={canvas}></canvas>
         </div>
     );
 };
