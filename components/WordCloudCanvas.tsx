@@ -34,6 +34,10 @@ const WordCloudCanvas = ({
 
         handleResize();
 
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+
     });
 
     return (

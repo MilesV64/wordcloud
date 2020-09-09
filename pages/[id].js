@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css';
 import Dropdown from '../components/Dropdown/dropdown';
 import Stat from '../components/Stat/stat';
+import CompletionsChart from '../components/CompletionsChart';
 
 const WordCloudCanvas = dynamic(() => import('../components/WordCloudCanvas'), {ssr: false});
 
@@ -38,6 +39,9 @@ const Dashboard = ({ group, groups, words, maxSize }) => {
             </div>
             
             <WordCloudCanvas className={styles.wordCloud} words={words} maxSize={maxSize} />
+
+            <CompletionsChart className={styles.chart} />
+            
         
         </div>
     )
