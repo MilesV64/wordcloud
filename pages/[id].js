@@ -7,9 +7,9 @@ import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css';
 import Dropdown from '../components/Dropdown/dropdown';
 import Stat from '../components/Stat/stat';
-import CompletionsChart from '../components/CompletionsChart';
 
 const WordCloudCanvas = dynamic(() => import('../components/WordCloudCanvas'), {ssr: false});
+const CompletionsChart = dynamic(() => import('../components/CompletionsChart'), {ssr: false});
 
 const Dashboard = ({ group, groups, words, maxSize }) => {
 
