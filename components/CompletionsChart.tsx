@@ -74,7 +74,7 @@ const CompletionsChart = ({
                 <VictoryBar 
                     style={styles.bars} 
                     data={data} x='day' y='completions' 
-                    barRatio={1}
+                    barRatio={0.95}
                     cornerRadius={2}/>
             </VictoryChart>
             
