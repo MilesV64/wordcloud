@@ -9,7 +9,7 @@ const getStyles = () => {
             fontFamily: "inherit",
             fontSize: "18px",
             fontWeight: "bold"
-        },
+        } as React.CSSProperties,
         bars: { 
             data: { fill: "#6789FA" } 
         },

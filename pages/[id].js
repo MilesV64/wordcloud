@@ -9,6 +9,7 @@ import Dropdown from '../components/Dropdown/dropdown';
 import Stat from '../components/Stat/stat';
 
 const WordCloudCanvas = dynamic(() => import('../components/WordCloudCanvas'), {ssr: false});
+const CompletionsChart = dynamic(() => import('../components/CompletionsChart'), {ssr: false});
 
 const Dashboard = ({ group, groups, words, maxSize }) => {
 
@@ -39,6 +40,7 @@ const Dashboard = ({ group, groups, words, maxSize }) => {
             
             <WordCloudCanvas className={styles.wordCloud} words={words} maxSize={maxSize} />
 
+            <CompletionsChart className={styles.chart} />
             
         
         </div>
