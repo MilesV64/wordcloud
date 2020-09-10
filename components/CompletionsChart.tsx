@@ -18,7 +18,7 @@ const getStyles = () => {
             tickLabels: {
               fill: "#718096",
               fontFamily: "inherit",
-              fontSize: 12,
+              fontSize: 10,
               fontWeight: "500"
             }
         }
@@ -67,14 +67,14 @@ const CompletionsChart = ({
                 <VictoryAxis 
                     style={styles.axis} 
                     scale="time"
-                    tickFormat={(t) => "Day " + t}/>
+                    fixLabelOverlap={true}/>
 
                 <VictoryAxis dependentAxis style={styles.axis} scale="time"/>
 
                 <VictoryBar 
                     style={styles.bars} 
                     data={data} x='day' y='completions' 
-                    barRatio={0.95}
+                    barRatio={width > 500 ? 0.95 : 0.85}
                     cornerRadius={2}/>
             </VictoryChart>
             
