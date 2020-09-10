@@ -21,6 +21,11 @@ const WordCloudCanvas = ({
             canvas.current,
             {
                 list: words,
+                fontFamily: 'Montserrat, sans-serif',
+                color: () => {
+                    const colors = ['#6789FA', '#FF5B65', '#15CABA'];
+                    return colors[Math.floor(Math.random()*3)];
+                },
                 weightFactor: (size: number) => {
                     return parent.current.offsetWidth/2 * (size/maxSize);
                 }
